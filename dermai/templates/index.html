@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DermAI — Intelligent Skin Health Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">Derm<span>AI</span></div>
+    <ul class="nav-links">
+      <li><a href="#analyze">Analyze</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#science">Science</a></li>
+    </ul>
+    <a href="#analyze" class="nav-cta">Start Analysis</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      AI-Powered Dermatology
+    </div>
+    <h1 class="hero-title">
+      Your skin tells a story.<br/>
+      <em>We help you read it.</em>
+    </h1>
+    <p class="hero-sub">
+      DermAI combines facial imaging, real-time air quality data, sleep patterns, and hormonal factors to deliver hyper-personalized skincare intelligence.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Data Sources</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">OpenCV</span><span class="stat-label">Image Analysis</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">Live AQI</span><span class="stat-label">Air Quality</span></div>
+    </div>
+    <a href="#analyze" class="hero-btn">
+      <span>Analyze My Skin</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-visual">
+    <div class="scan-frame">
+      <div class="scan-corners">
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+      </div>
+      <div class="scan-line"></div>
+      <div class="scan-data">
+        <div class="sd-item"><span class="sd-label">Redness</span><div class="sd-bar"><div class="sd-fill" style="width:32%"></div></div></div>
+        <div class="sd-item"><span class="sd-label">Hydration</span><div class="sd-bar"><div class="sd-fill" style="width:71%"></div></div></div>
+        <div class="sd-item"><span class="sd-label">Texture</span><div class="sd-bar"><div class="sd-fill" style="width:55%"></div></div></div>
+        <div class="sd-item"><span class="sd-label">AQI Risk</span><div class="sd-bar"><div class="sd-fill red" style="width:68%"></div></div></div>
+      </div>
+      <div class="scan-score">
+        <div class="score-ring">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="url(#sg)" stroke-width="6" stroke-linecap="round"
+              stroke-dasharray="263.9" stroke-dashoffset="66" transform="rotate(-90 50 50)"/>
+            <defs>
+              <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#a8edca"/>
+                <stop offset="100%" stop-color="#4ecdc4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-val">75</div>
+        </div>
+        <div class="score-label">Skin Score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ──────────────────────────────────────────────────────── -->
+<section class="features" id="how">
+  <div class="section-header">
+    <div class="section-eyebrow">Four Pillars of Analysis</div>
+    <h2>Science, not guesswork</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M3 21a9 9 0 0 1 18 0"/></svg>
+      </div>
+      <h3>Facial Image Analysis</h3>
+      <p>OpenCV processes your photo to detect redness, oiliness, texture roughness, dark spots, and moisture levels with precision.</p>
+      <div class="fc-tag">OpenCV · Haar Cascade · LAB Color</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3>Real-Time Air Quality</h3>
+      <p>Live PM2.5, PM10, NO₂, and O₃ readings from OpenWeatherMap identify pollution-driven skin risks for your exact city.</p>
+      <div class="fc-tag">OpenWeatherMap API · PM2.5 · AQI Index</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3"/><path d="M12 3v9l6 6"/></svg>
+      </div>
+      <h3>Sleep & Stress Factors</h3>
+      <p>Sleep deprivation spikes cortisol and breaks down collagen. We quantify how your sleep and stress degrade skin barrier function.</p>
+      <div class="fc-tag">Cortisol Modeling · Barrier Analysis</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12a4 4 0 0 1 8 0"/></svg>
+      </div>
+      <h3>Hormonal Phase Intelligence</h3>
+      <p>Each menstrual phase changes skin sebum, sensitivity, and pigmentation. We adapt recommendations to your exact hormonal cycle.</p>
+      <div class="fc-tag">Cycle-Aware · Hormonal Mapping</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ANALYSIS FORM ─────────────────────────────────────────────────── -->
+<section class="analyze-section" id="analyze">
+  <div class="section-header">
+    <div class="section-eyebrow">Start Here</div>
+    <h2>Analyze Your Skin</h2>
+    <p>Upload a clear facial photo and enter your lifestyle data for a personalized report.</p>
+  </div>
+
+  <div class="analyzer-wrapper">
+    <div class="analyzer-form-panel">
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="imageInput" accept="image/*" hidden />
+        <div class="upload-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="upload-text">
+          <strong>Upload Facial Photo</strong>
+          <span>JPG, PNG, WEBP — max 16MB</span>
+        </div>
+        <img id="previewImg" src="" alt="Preview" style="display:none;" />
+        <div class="upload-hint">Click or drag & drop</div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>City / Location</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <input type="text" id="cityInput" placeholder="e.g. Delhi, Mumbai, Indore" value="Indore" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Sleep Last Night</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3"/></svg>
+            <input type="number" id="sleepInput" min="1" max="12" step="0.5" value="7" placeholder="Hours" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Skin Type</label>
+          <div class="select-wrap">
+            <select id="skinTypeInput">
+              <option value="normal">Normal</option>
+              <option value="dry">Dry</option>
+              <option value="oily">Oily</option>
+              <option value="combination">Combination</option>
+              <option value="sensitive">Sensitive</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Hormonal Phase</label>
+          <div class="select-wrap">
+            <select id="hormonalInput">
+              <option value="none">Not applicable / Unsure</option>
+              <option value="menstrual">Menstrual (Days 1–5)</option>
+              <option value="follicular">Follicular (Days 6–13)</option>
+              <option value="ovulation">Ovulation (Days 14–16)</option>
+              <option value="luteal">Luteal (Days 17–28)</option>
+              <option value="postpartum">Postpartum</option>
+              <option value="menopause">Menopause</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Stress Level — <span id="stressVal">5</span>/10</label>
+          <div class="slider-wrap">
+            <span>Calm</span>
+            <input type="range" id="stressInput" min="1" max="10" value="5" class="slider" />
+            <span>Very High</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="analyze-btn" id="analyzeBtn">
+        <span id="btnText">Run Skin Analysis</span>
+        <div class="btn-loader" id="btnLoader" style="display:none">
+          <div class="spinner"></div>
+          <span>Analyzing…</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- RESULTS PANEL -->
+    <div class="results-panel" id="resultsPanel" style="display:none">
+      <div class="results-header">
+        <h3>Your Skin Report</h3>
+        <div class="risk-badge" id="riskBadge"></div>
+      </div>
+
+      <!-- Score -->
+      <div class="score-section">
+        <div class="big-score-ring">
+          <svg viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="58" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="8"/>
+            <circle cx="70" cy="70" r="58" fill="none" id="scoreArc"
+              stroke="url(#bigGrad)" stroke-width="8" stroke-linecap="round"
+              stroke-dasharray="364.4" stroke-dashoffset="364.4" transform="rotate(-90 70 70)"/>
+            <defs>
+              <linearGradient id="bigGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#a8edca"/>
+                <stop offset="100%" stop-color="#4ecdc4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="big-score-val" id="bigScoreVal">--</div>
+        </div>
+        <div class="score-details">
+          <div class="score-label-big">Overall Skin Health Score</div>
+          <div class="face-detect-note" id="faceDetectNote"></div>
+          <div class="aqi-info" id="aqiInfo"></div>
+        </div>
+      </div>
+
+      <!-- Skin Metrics -->
+      <div class="metrics-grid" id="metricsGrid"></div>
+
+      <!-- SPF -->
+      <div class="rec-block spf-block">
+        <div class="rec-block-title">☀️ Recommended SPF</div>
+        <div class="spf-value" id="spfValue"></div>
+      </div>
+
+      <!-- Active Ingredients -->
+      <div class="rec-block" id="ingredientsBlock" style="display:none">
+        <div class="rec-block-title">🧪 Active Ingredients for You</div>
+        <div class="ingredients-list" id="ingredientsList"></div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="rec-block" id="recsBlock" style="display:none">
+        <div class="rec-block-title">📋 Personalized Recommendations</div>
+        <ul class="recs-list" id="recsList"></ul>
+      </div>
+
+      <!-- Warnings -->
+      <div class="rec-block warnings-block" id="warningsBlock" style="display:none">
+        <div class="rec-block-title">⚠️ Alerts</div>
+        <ul class="warnings-list" id="warningsList"></ul>
+      </div>
+
+      <!-- Lifestyle -->
+      <div class="rec-block" id="lifestyleBlock" style="display:none">
+        <div class="rec-block-title">🌿 Lifestyle Adjustments</div>
+        <ul class="lifestyle-list" id="lifestyleList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCIENCE SECTION ──────────────────────────────────────────────── -->
+<section class="science-section" id="science">
+  <div class="science-inner">
+    <div class="science-text">
+      <div class="section-eyebrow">The Technology</div>
+      <h2>How DermAI Works</h2>
+      <div class="science-steps">
+        <div class="sstep"><div class="sstep-num">01</div><div class="sstep-content"><strong>Image Capture</strong><p>You upload a facial photo. OpenCV detects your face using Haar Cascade classifiers and isolates the skin region.</p></div></div>
+        <div class="sstep"><div class="sstep-num">02</div><div class="sstep-content"><strong>Pixel Analysis</strong><p>The RGB, HSV, and LAB color spaces are analyzed to quantify redness, oiliness, texture roughness, dark spots, and moisture levels.</p></div></div>
+        <div class="sstep"><div class="sstep-num">03</div><div class="sstep-content"><strong>Environment Correlation</strong><p>Real-time PM2.5, O₃, and NO₂ from OpenWeatherMap are fetched for your city and correlated with skin oxidative stress models.</p></div></div>
+        <div class="sstep"><div class="sstep-num">04</div><div class="sstep-content"><strong>Holistic Scoring</strong><p>Sleep deprivation, hormonal phase, and stress are weighted against skin metrics to compute a composite health score and tailored recommendations.</p></div></div>
+      </div>
+    </div>
+    <div class="science-visual">
+      <div class="pipeline">
+        <div class="pipe-node">📸 Image</div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-node active">🔬 OpenCV</div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-node">🌫️ AQI API</div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-node">😴 Lifestyle</div>
+        <div class="pipe-arrow">↓</div>
+        <div class="pipe-node result">✨ Results</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Derm<span>AI</span></div>
+    <p class="footer-note">DermAI is for informational purposes only and does not substitute professional dermatological advice. Always consult a qualified dermatologist for skin conditions.</p>
+    <p class="footer-tech">Built with Python · Flask · OpenCV · OpenWeatherMap API</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
