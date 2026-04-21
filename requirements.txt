@@ -1,6 +1,6 @@
-flask>=2.3.0
-opencv-python-headless>=4.8.0
-numpy>=1.24.0
-requests>=2.31.0
-werkzeug>=2.3.0
+flask
 gunicorn
+opencv-python-headless
+numpy
+requests
+werkzeug.utils
